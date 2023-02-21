@@ -6,12 +6,12 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        git branch: 'main', url: 'https://github.com/bkrraj/hello-world.git'
+        git branch: 'main', url: 'https://github.com/bkrraj/helloworld.git'
       }
     }
     stage('Pull Changes') {
       steps {
-        sh 'git pull main'
+        sh 'git pull origin main'
       }
     }
     stage('Build') {
