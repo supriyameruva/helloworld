@@ -100,7 +100,7 @@ pipeline {
           steps {
             script {
                echo '<--------------- Deploy Started --------------->'
-               deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://ec2-34-227-150-78.compute-1.amazonaws.com:8080')], contextPath: null, war: '**/*.war'
+               deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://ec2-23-23-60-109.compute-1.amazonaws.com:8080')], contextPath: null, war: '**/*.war'
                echo '<--------------- Deploy Ends --------------->'
             }
           }
