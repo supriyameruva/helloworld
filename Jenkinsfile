@@ -11,7 +11,7 @@ pipeline {
     }
     stage('Pull Changes') {
       steps {
-        sh 'git pull master'
+        sh 'git pull origin main'
       }
     }
     stage('Build') {
