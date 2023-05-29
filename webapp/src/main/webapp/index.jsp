@@ -31,7 +31,7 @@
     <p>Already have an account? <a href="#">Sign in</a>.</p>
   </div>
 
-   <h1> Welcome to NCPL <h1>
+   <h1> Welcome to NCPL DEVOPS Classes <h1>
 
   
 </form>
