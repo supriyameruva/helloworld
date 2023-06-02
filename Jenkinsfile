@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        git branch: 'main', url: 'https://github.com/bkrraj/helloworld.git'
+        git branch: 'main', url: 'git@github.com:bkrraj/helloworld.git'
       }
     }
     stage('Pull Changes') {
