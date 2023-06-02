@@ -12,5 +12,11 @@ pipeline {
         echo "WebHook Is Successfull"
       }
     }
+    stage('Build') {
+      steps {
+        echo '<--------------- Building --------------->'
+        sh 'printenv'
+        sh '/opt/apache-maven/bin/mvn clean install'
+        echo '<------------- Build completed --------------->'
   }
 }
