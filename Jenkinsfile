@@ -8,7 +8,7 @@ pipeline {
     }
     stage('Pull Changes') {
       steps {
-        sh 'git pull main'
+        sh 'git pull origin main'
       }
     }
   }
