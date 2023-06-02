@@ -16,7 +16,7 @@ pipeline {
       steps {
         echo '<--------------- Building --------------->'
         sh 'printenv'
-        sh '/opt/apache-maven/bin/mvn clean install'
+        sh 'mvn clean install'
         echo '<------------- Build completed --------------->'
   }
 }
