@@ -18,7 +18,7 @@ pipeline {
         sh 'printenv'
         sh 'mvn clean install'
         echo '<------------- Build completed --------------->'
-  }
-}
+       }
+     }
   }
 }
