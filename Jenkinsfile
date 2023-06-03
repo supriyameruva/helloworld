@@ -23,7 +23,7 @@ pipeline {
     stage('Unit Test') {
       steps {
         echo '<--------------- Unit Testing started  --------------->'
-        sh '/opt/apache-maven/bin/mvn surefire-report:report'
+        sh 'mvn surefire-report:report'
         echo '<------------- Unit Testing stopped  --------------->'
       }
     }
