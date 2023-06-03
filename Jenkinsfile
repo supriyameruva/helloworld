@@ -12,8 +12,7 @@ pipeline {
         echo "WebHook Is Successfull"
       }
     }
-    stages {
-        stage ('Initialize') {
+    stage ('Initialize') {
             steps {
                 sh '''
                     echo "PATH = ${PATH}"
@@ -21,7 +20,6 @@ pipeline {
                 '''
             }
         }
-    }
     stage('Build') {
       steps {
         echo '<--------------- Building --------------->'
