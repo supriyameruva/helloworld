@@ -16,6 +16,7 @@ pipeline {
       steps {
         echo '<--------------- Building --------------->'
         sh 'printenv'
+        sh 'mvn -version'
         sh 'mvn clean install'
         echo '<------------- Build completed --------------->'
        }
