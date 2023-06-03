@@ -39,7 +39,7 @@ pipeline {
 
         // }
         withSonarQubeEnv('SonarQubeScanner') {
-          sh 'mvn clean verify sonar:sonar -Dsonar.projectKey=bkrraj_javaapp'
+          sh 'mvn clean verify sonar:sonar -Dsonar.projectKey=Javaapp'
           echo '<--------------- Sonar Analysis stopped  --------------->'
         }
       }
