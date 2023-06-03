@@ -12,10 +12,20 @@ pipeline {
         echo "WebHook Is Successfull"
       }
     }
+    stages {
+        stage ('Initialize') {
+            steps {
+                sh '''
+                    echo "PATH = ${PATH}"
+                    echo "M2_HOME = ${M2_HOME}"
+                '''
+            }
+        }
     stage('Build') {
       steps {
         echo '<--------------- Building --------------->'
         sh 'printenv'
+        
         sh 'mvn clean install'
         echo '<------------- Build completed --------------->'
        }
