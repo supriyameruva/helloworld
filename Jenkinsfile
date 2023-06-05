@@ -38,7 +38,7 @@ pipeline {
                 //     sh "${scannerHome}/bin/sonar-scanner"
 
         // }
-        withSonarQubeEnv('SonarQubeScanner') {
+        withSonarQubeEnv('sonar') {
           sh 'mvn clean verify sonar:sonar -Dsonar.projectKey=Javaapp'
           echo '<--------------- Sonar Analysis stopped  --------------->'
         }
