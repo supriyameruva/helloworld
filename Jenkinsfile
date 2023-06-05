@@ -28,5 +28,21 @@ pipeline {
         echo '<------------- Unit Testing stopped  --------------->'
       }
     }
+    stage('Sonar Analysis') {
+      environment {
+        scannerHome = tool 'SonarQubeScanner'
+      }
+      steps {
+        echo '<--------------- Sonar Analysis started  --------------->'
+                // withSonarQubeEnv('SonarServer') {
+                //     sh "${scannerHome}/bin/sonar-scanner"
+
+        // }
+        withSonarQubeEnv('SonarQubeScanner') {
+          sh 'mvn clean verify sonar:sonar -Dsonar.projectKey=Javaapp'
+          echo '<--------------- Sonar Analysis stopped  --------------->'
+        }
+      }
+    }
   }
 }
