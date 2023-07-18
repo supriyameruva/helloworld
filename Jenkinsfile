@@ -25,7 +25,7 @@ pipeline {
       steps {
         echo '<--------------- Unit Testing started  --------------->'
         sh 'mvn surefire-report:report'
-        echo '<------------- Unit Testing stopped  --------------->'
+        echo '<------------- Unit Testing stopped  -------------------->'
       }
     }
     stage('Sonar Analysis') {
