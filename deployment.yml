@@ -1,24 +1,53 @@
-apiVersion: apps/v1
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: helloworld
+#   namespace: helloworld
+# spec:
+#   replicas: 1
+#   selector:
+#     matchLabels:
+#       app:  helloworld
+#   template:
+#     metadata:
+#       labels:
+#         app:  helloworld
+#     spec:
+#       imagePullSecrets:
+#       - name: cred
+#       containers:
+#       - name:  docker
+#         image: http://20.163.196.201:9091/repository/docker/sonatypenexus/helloworld:1.0.2
+#         imagePullPolicy: Always
+#         ports:
+#         - containerPort: 8000
+   
+apiVersion: apps/v1 
 kind: Deployment
 metadata:
-  name: helloworld
-  namespace: helloworld
+  name: bala-regapp
+  labels: 
+     app: regapp
+
 spec:
-  replicas: 1
+  replicas: 5 
   selector:
     matchLabels:
-      app:  helloworld
+      app: regapp
+
   template:
     metadata:
       labels:
-        app:  helloworld
+        app: regapp
     spec:
-      imagePullSecrets:
-      - name: cred
       containers:
-      - name:  docker
-        image: http://20.163.196.201:9091/repository/docker/sonatypenexus/helloworld:1.0.2
+      - name: regapp
+        image: balaazurecontainerreg.azurecr.io/balaazurecontainerreg:117
         imagePullPolicy: Always
         ports:
-        - containerPort: 8000
-   
+        - containerPort: 8080
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
