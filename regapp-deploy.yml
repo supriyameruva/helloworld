@@ -1,15 +1,29 @@
-apiVersion: v1
-kind: Service
+apiVersion: apps/v1 
+kind: Deployment
 metadata:
-  name: bala-service
-  labels:
-    app: regapp 
+  name: bala-regapp
+  labels: 
+     app: regapp
+
 spec:
+  replicas: 5 
   selector:
-    app: regapp 
+    matchLabels:
+      app: regapp
 
-  ports:
-    - port: 8080
-      targetPort: 8080
-
-  type: LoadBalancer
+  template:
+    metadata:
+      labels:
+        app: regapp
+    spec:
+      containers:
+      - name: regapp
+        image: balaazurecontainerreg.azurecr.io/balaazurecontainerreg:117
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
