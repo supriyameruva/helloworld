@@ -20,7 +20,7 @@ phases:
     commands:
       - echo "Copying the WAR file to S3..."
       - pwd
-      - aws s3 cp target/myapp.war s3://my-maven-build-artifacts/myapp.war  # Upload WAR to S3
+      - aws s3 cp webapp/target/myapp.war s3://my-maven-build-artifacts/myapp.war  # Upload WAR to S3
 
   post_build:
     commands:
