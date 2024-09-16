@@ -1,0 +1,12 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Installing necessary tools...
+      - yum install -y aws-cli
+  build:
+    commands:
+      - echo Deploying to EC2 instance...
+      - chmod +x deploy.sh
+      - ./adeploy.sh
