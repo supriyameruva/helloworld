@@ -12,6 +12,7 @@ phases:
   pre_build:
     commands:
       - echo "Starting the build phase..."
+      - pwd
       - mvn clean package  # Example Maven build command for Java project
       - echo "Build complete."
 
