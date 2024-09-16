@@ -2,11 +2,11 @@
 # deploy.sh
 
 # Variables
-TOMCAT_WEBAPPS_DIR="/path/to/tomcat/webapps"
-ARTIFACT_BUCKET="your-s3-bucket"
-ARTIFACT_NAME="sample-app-${CODEBUILD_BUILD_NUMBER}.war"
+TOMCAT_WEBAPPS_DIR="/var/lib/tomcat/webapps"
+ARTIFACT_BUCKET="my-maven-build-artifacts"
+ARTIFACT_NAME="myapp-${CODEBUILD_BUILD_NUMBER}.war"
 EC2_USER="ec2-user"
-EC2_HOST="your-ec2-public-dns"
+EC2_HOST="ec2-54-175-52-123.compute-1.amazonaws.com"
 PEM_KEY="path/to/your/key.pem"
 
 # Download the artifact from S3
