@@ -23,8 +23,8 @@ phases:
   post_build:
     commands:
       - echo "Build successful. Starting deployment..."
-      - chmod +x deploy.sh  # Ensure the deployment script is executable
-      - ./deploy.sh         # Run the deploy script to deploy the WAR file to EC2 and restart Tomcat
+      - chmod +x adeploy.sh  # Ensure the deployment script is executable
+      - ./adeploy.sh         # Run the deploy script to deploy the WAR file to EC2 and restart Tomcat
 
 artifacts:
   files:
