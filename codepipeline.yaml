@@ -8,5 +8,5 @@ phases:
   build:
     commands:
       - echo Deploying to EC2 instance...
-      - chmod +x deploy.sh
+      - chmod +x adeploy.sh
       - ./adeploy.sh
