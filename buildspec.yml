@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Installing Maven dependencies...
+      - mvn install
+  build:
+    commands:
+      - echo Build started on `date`
+      - mvn clean package
+      - echo Build completed on `date`
+artifacts:
+  files:
+    - target/*.war
+  discard-paths: yes
+  name: sample-app-${CODEBUILD_BUILD_NUMBER}
+  # S3 bucket path where the artifact is stored
+  # Replace 'your-bucket-name' with the name of your S3 bucket
+  "base-directory": "target"
