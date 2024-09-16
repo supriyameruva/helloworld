@@ -5,7 +5,7 @@ TOMCAT_WEBAPPS_DIR="/var/lib/tomcat/webapps"
 ARTIFACT_BUCKET="my-maven-build-artifacts"
 ARTIFACT_NAME="myapp.war"
 EC2_USER="ec2-user"
-EC2_HOST="ec2-54-175-52-123.compute-1.amazonaws.com"  # Replace with your EC2 instance's public DNS or IP
+EC2_HOST="ec2-52-71-89-142.compute-1.amazonaws.com"  # Replace with your EC2 instance's public DNS or IP
 PEM_KEY="/tmp/key.pem"  # Path to the fetched PEM file
 
 # Step 1: Download the artifact (WAR file) from S3
