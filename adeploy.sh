@@ -16,10 +16,5 @@ aws s3 cp s3://$ARTIFACT_BUCKET/$ARTIFACT_NAME /tmp/$ARTIFACT_NAME
 echo "Copying the WAR file to EC2 instance..."
 scp -i $PEM_KEY /tmp/$ARTIFACT_NAME $EC2_USER@$EC2_HOST:$TOMCAT_WEBAPPS_DIR
 
-# Step 3: SSH into the EC2 instance and restart Tomcat
-echo "Restarting Tomcat on EC2 instance..."
-ssh -i $PEM_KEY $EC2_USER@$EC2_HOST << 'EOF'
-sudo systemctl restart tomcat
-EOF
 
 echo "Deployment completed."
