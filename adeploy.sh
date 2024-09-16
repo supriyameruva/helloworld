@@ -14,7 +14,6 @@ aws s3 cp s3://$ARTIFACT_BUCKET/$ARTIFACT_NAME /tmp/$ARTIFACT_NAME
 
 # Step 2: Copy the WAR file to the Tomcat webapps directory on the EC2 instance
 echo "Copying the WAR file to EC2 instance..."
-scp -i $PEM_KEY /tmp/$ARTIFACT_NAME $EC2_USER@$EC2_HOST:$TOMCAT_WEBAPPS_DIR
-
+scp -i $PEM_KEY -o StrictHostKeyChecking=no /tmp/$ARTIFACT_NAME $EC2_USER@$EC2_HOST:$TOMCAT_WEBAPPS_DIR
 
 echo "Deployment completed."
